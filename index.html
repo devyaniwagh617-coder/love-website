@@ -1,11 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For Paras ❤️</title>
+<title>Devyani ❤️ Paras Forever</title>
 
-<style>
+<style/* ---------- PHOTO CAROUSEL ---------- */
+
+.carousel{
+    position:relative;
+    width:320px;
+    max-width:90%;
+    margin:25px auto;
+}
+
+
+.carousel img{
+
+    width:100%;
+    height:420px;
+    object-fit:cover;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 25px #ff99bb;
+
+    transition:1s;
+}
+
+
+/* Carousel Arrows */
+
+.arrow{
+
+    position:absolute;
+
+    top:45%;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#ff4d88;
+
+    font-size:22px;
+
+    padding:0;
+
+}
+
+
+.left{
+    left:-20px;
+}
+
+
+.right{
+    right:-20px;
+}
+
+
+
+/* ---------- LOVE NOTES ---------- */
+
+
+.notes{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+margin:25px;
+
+}
+
+
+.envelope{
+
+font-size:45px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+.envelope:hover{
+
+transform:scale(1.3);
+
+}
+
+
+#noteMessage{
+
+font-style:italic;
+
+color:#ff0066;
+
+}>
+
+/* ---------- RESET ---------- */
 
 *{
     margin:0;
@@ -14,93 +118,28 @@
     font-family: 'Georgia', serif;
 }
 
+
+/* ---------- BODY ---------- */
+
 body{
-    background: linear-gradient(135deg,#fff5f7,#ffe4ec,#fffafc);
-    overflow-x:hidden;
+    background: linear-gradient(135deg,#fff6f8,#ffe6ee,#fffafc);
     color:#8b004d;
+    overflow:hidden;
     text-align:center;
 }
 
-/* Background Animations */
 
-.heart,.star,.rose{
-    position:fixed;
-    pointer-events:none;
-    z-index:0;
-}
-
-.heart{
-    font-size:25px;
-    animation:float 8s linear infinite;
-}
-
-.star{
-    font-size:15px;
-    animation:twinkle 2s infinite;
-}
-
-.rose{
-    top:-50px;
-    font-size:25px;
-    animation:fall 8s linear infinite;
-}
-
-
-/* Animations */
-
-@keyframes float{
-    from{
-        transform:translateY(100vh) rotate(0deg);
-        opacity:1;
-    }
-
-    to{
-        transform:translateY(-20vh) rotate(360deg);
-        opacity:0;
-    }
-}
-
-
-@keyframes twinkle{
-    0%,100%{
-        opacity:.2;
-        transform:scale(1);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.5);
-    }
-}
-
-
-@keyframes fall{
-
-    from{
-        transform:translateY(-50px)
-        rotate(0deg);
-        opacity:1;
-    }
-
-    to{
-        transform:translateY(110vh)
-        rotate(360deg);
-        opacity:0;
-    }
-}
-
-
-/* Pages */
+/* ---------- PAGES ---------- */
 
 .page{
-    min-height:100vh;
+    position:absolute;
+    width:100%;
+    height:100vh;
     display:none;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
-    padding:30px;
-    position:relative;
-    z-index:1;
+    padding:25px;
+    z-index:2;
 }
 
 .active{
@@ -108,26 +147,41 @@ body{
 }
 
 
-/* Glass Card */
+/* ---------- GLASS CARD ---------- */
 
 .card{
-    background:rgba(255,255,255,0.55);
+
+    background:rgba(255,255,255,0.6);
     backdrop-filter:blur(15px);
-    padding:30px;
-    border-radius:30px;
+
     width:90%;
-    max-width:800px;
-    box-shadow:0 0 40px rgba(255,105,180,0.4);
+    max-width:850px;
+
+    padding:35px;
+
+    border-radius:35px;
+
+    box-shadow:
+    0 0 35px rgba(255,80,150,.45);
+
+    animation:fadeIn 1s;
 }
 
 
-/* Text */
+/* ---------- TEXT ---------- */
 
 h1{
-    font-size:42px;
+    font-size:45px;
     margin-bottom:20px;
-    text-shadow:0 0 15px pink;
+    text-shadow:0 0 15px #ff99bb;
 }
+
+
+h2{
+    font-size:32px;
+    margin:15px;
+}
+
 
 p{
     font-size:20px;
@@ -135,89 +189,310 @@ p{
 }
 
 
-/* Buttons */
+/* ---------- BUTTONS ---------- */
 
 button{
+
     margin-top:25px;
-    padding:15px 35px;
-    border:none;
-    border-radius:50px;
+
     background:
-    linear-gradient(
-    45deg,#ff4d88,#ff99bb);
-    
+    linear-gradient(45deg,#ff4d88,#ff99bb);
+
     color:white;
+
+    border:none;
+
+    padding:15px 35px;
+
     font-size:18px;
+
+    border-radius:50px;
+
     cursor:pointer;
-    box-shadow:0 0 25px pink;
-    transition:0.3s;
+
+    box-shadow:0 0 25px #ff99bb;
+
+    transition:.3s;
+
 }
+
 
 button:hover{
-    transform:scale(1.1);
+
+    transform:scale(1.08);
+
 }
 
 
-/* Photo Carousel */
+/* ---------- ANIMATIONS ---------- */
 
-.carousel{
-    position:relative;
-    width:320px;
-    max-width:90%;
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(30px);
 }
 
-.carousel img{
-    width:100%;
-    height:400px;
-    object-fit:cover;
-    border-radius:25px;
-    box-shadow:0 0 30px pink;
-    transition:1s;
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 
-.arrow{
-    position:absolute;
-    top:45%;
-    background:white;
-    color:#ff4d88;
-    width:40px;
-    height:40px;
-    border-radius:50%;
+/* ---------- HEARTS ---------- */
+
+.heart{
+
+position:fixed;
+font-size:25px;
+pointer-events:none;
+z-index:1;
+
+animation:
+floatHeart 8s linear infinite;
+
 }
 
-.left{
-    left:-20px;
+
+@keyframes floatHeart{
+
+from{
+
+transform:
+translateY(110vh)
+rotate(0deg);
+
+opacity:1;
+
 }
 
-.right{
-    right:-20px;
+
+to{
+
+transform:
+translateY(-20vh)
+rotate(360deg);
+
+opacity:0;
+
 }
 
-</style>
-</head>
-
-<body>
-<!-- 🎵 Romantic Music -->
-<audio id="music" loop>
-    <source src="music.mp3" type="audio/mp3">
-</audio>
+}
 
 
-<!-- 🌸 Page 1 - Welcome -->
+/* ---------- STARS ---------- */
 
-<div class="page active" id="page1">
+
+.star{
+
+position:fixed;
+
+font-size:15px;
+
+pointer-events:none;
+
+z-index:1;
+
+animation:
+twinkle 2s infinite;
+
+}
+
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.3;
+transform:scale(1);
+
+}
+
+50%{
+
+opacity:1;
+transform:scale(1.6);
+
+}
+
+}
+
+
+/* ---------- ROSES ---------- */
+
+
+.rose{
+
+position:fixed;
+
+top:-50px;
+
+font-size:25px;
+
+pointer-events:none;
+
+z-index:1;
+
+animation:
+fallRose 8s linear infinite;
+
+}
+
+
+@keyframes fallRose{
+
+
+from{
+
+transform:
+translateY(-50px)
+rotate(0deg);
+
+opacity:1;
+
+}
+
+
+to{
+
+transform:
+translateY(110vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+
+/* ---------- OPENING SCREEN ---------- */
+
+
+#startPage h1{
+
+font-size:55px;
+
+animation:
+loveGlow 2s infinite;
+
+}
+
+
+@keyframes loveGlow{
+
+0%,100%{
+
+text-shadow:
+0 0 15px #ff66aa;
+
+}
+
+
+50%{
+
+text-shadow:
+0 0 40px #ff0066;
+
+}
+
+}
+
+
+
+/* ---------- MOBILE ---------- */
+
+
+@media(max-width:600px){
+
+
+h1{
+
+font-size:34px;
+
+}
+
+
+h2{
+
+font-size:26px;
+
+}
+
+
+p{
+
+font-size:17px;
+
+}
+
+
+button{
+
+padding:14px 28px;
+
+font-size:16px;
+
+}
+
+}
+
+
+<!-- 📖 PAGE 4 — Our Beautiful Journey -->
+
+<div class="page" id="page4">
 
 <div class="card">
 
-<h1 id="typing"></h1>
+<h1>
+Our Beautiful Journey ❤️
+</h1>
 
-<p>
-A little piece of my heart, created only for you ❤️
-</p>
+<div class="timeline">
+
+<div class="step">
+❤️ The Day We Met
+</div>
+
+<div class="line">
+↓
+</div>
+
+
+<div class="step">
+💍 The Day We Got Engaged
+</div>
+
+<div class="line">
+↓
+</div>
+
+
+<div class="step">
+👰 12 December 2026
+<br>
+Our Wedding Day
+</div>
+
+
+<div class="line">
+↓
+</div>
+
+
+<div class="step">
+♾️ Forever Together
+</div>
+
+
+</div>
+
 
 <button onclick="nextPage()">
-Open My Heart 💌
+See Our Forever Countdown 💍
 </button>
 
 </div>
@@ -226,7 +501,73 @@ Open My Heart 💌
 
 
 
-<!-- 📸 Page 2 - Our Beautiful Memories -->
+<!-- 💍 PAGE 5 — Wedding Countdown -->
+
+
+<div class="page" id="page5">
+
+
+<div class="card">
+
+<h1>
+Our Forever Begins In ❤️
+</h1>
+
+
+<div id="countdown">
+
+Counting our beautiful days together...
+
+</div>
+
+
+<p>
+
+Every second brings us closer to saying 
+"I do" 💍❤️
+
+</p>
+
+
+<button onclick="nextPage()">
+
+Read My Heart 💌
+
+</button>
+
+
+</div>
+
+
+</div></style>
+
+
+</head>
+
+
+<body<!-- 💌 PAGE 1 — Welcome Message -->
+
+<div class="page" id="page1">
+
+<div class="card">
+
+<h1 id="typing"></h1>
+
+<p>
+There is a little piece of my heart that I have saved just for you ❤️
+</p>
+
+<button onclick="nextPage()">
+Open Our Memories 📸
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 📸 PAGE 2 — Our Beautiful Memories -->
 
 <div class="page" id="page2">
 
@@ -238,6 +579,7 @@ Our Beautiful Memories ❤️
 
 
 <div class="carousel">
+
 
 <button class="arrow left"
 onclick="previousPhoto()">
@@ -267,7 +609,7 @@ but nothing compares to the light you brought into my life ❤️🌅
 
 
 <button onclick="nextPage()">
-Our Forever Countdown 💍
+Read My Secret Notes 💌
 </button>
 
 
@@ -277,9 +619,182 @@ Our Forever Countdown 💍
 
 
 
-<!-- 💍 Page 3 - Wedding Countdown -->
+
+<!-- 💌 PAGE 3 — Secret Love Notes -->
+
 
 <div class="page" id="page3">
+
+<div class="card">
+
+
+<h1>
+My Little Love Notes ❤️
+</h1>
+
+
+<p>
+Click each envelope to discover my hidden feelings 💌
+</p>
+
+
+<div class="notes">
+
+
+<div class="envelope"
+onclick="showNote(1)">
+💌
+</div>
+
+
+<div class="envelope"
+onclick="showNote(2)">
+💌
+</div>
+
+
+<div class="envelope"
+onclick="showNote(3)">
+💌
+</div>
+
+
+<div class="envelope"
+onclick="showNote(4)">
+💌
+</div>
+
+
+</div>
+
+
+<p id="noteMessage">
+
+My heart has so many things to tell you ❤️
+
+</p>
+
+
+<button onclick="nextPage()">
+
+Our Journey Together 📖
+
+</button>
+
+
+</div>
+
+</div>>
+
+
+<!-- 🎵 MUSIC -->
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- ❤️ OPENING PAGE -->
+
+
+<div class="page active" id="startPage">
+
+
+<div class="card">
+
+
+<h1>
+Devyani ❤️ Paras
+</h1>
+
+
+<p>
+
+A love written in destiny,
+a journey made of memories,
+and a forever waiting to begin.
+
+❤️🌹💍
+
+</p>
+
+
+<button onclick="startStory()">
+
+Tap To Begin Our Forever Story ❤️
+
+</button>
+
+
+</div>
+
+
+</div>
+<!-- 📖 PAGE 4 — Our Beautiful Journey -->
+
+<div class="page" id="page4">
+
+<div class="card">
+
+<h1>
+Our Beautiful Journey ❤️
+</h1>
+
+<div class="timeline">
+
+<div class="step">
+❤️ The Day We Met
+</div>
+
+<div class="line">
+↓
+</div>
+
+
+<div class="step">
+💍 The Day We Got Engaged
+</div>
+
+<div class="line">
+↓
+</div>
+
+
+<div class="step">
+👰 12 December 2026
+<br>
+Our Wedding Day
+</div>
+
+
+<div class="line">
+↓
+</div>
+
+
+<div class="step">
+♾️ Forever Together
+</div>
+
+
+</div>
+
+
+<button onclick="nextPage()">
+See Our Forever Countdown 💍
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 💍 PAGE 5 — Wedding Countdown -->
+
+
+<div class="page" id="page5">
+
 
 <div class="card">
 
@@ -288,45 +803,42 @@ Our Forever Begins In ❤️
 </h1>
 
 
-<div id="countdown"
-style="
-font-size:30px;
-font-weight:bold;
-line-height:1.7;
-">
+<div id="countdown">
 
-Loading our special moment...
+Counting our beautiful days together...
 
 </div>
 
 
 <p>
 
-Until our wedding day:
-<br>
-
-💍 12 December 2026 💍
+Every second brings us closer to saying 
+"I do" 💍❤️
 
 </p>
 
 
 <button onclick="nextPage()">
-Read My Letter 💌
+
+Read My Heart 💌
+
 </button>
 
 
 </div>
 
-</div>
-<!-- 💌 Page 4 - Love Letter -->
 
-<div class="page" id="page4">
+</div>
+<!-- 💌 PAGE 6 — My Love Letter -->
+
+<div class="page" id="page6">
 
 <div class="card">
 
 <h1>
-A Letter For You, Paras ❤️
+A Letter From My Heart ❤️
 </h1>
+
 
 <p>
 
@@ -334,33 +846,34 @@ My dearest Paras,
 
 <br><br>
 
-From the moment you came into my life,
-everything became more beautiful.
+From the moment you entered my life,
+everything became brighter and more beautiful.
 
-Your smile is my favorite sight,
-your happiness is my biggest wish,
-and your love is where my heart feels at home.
+Your smile became my favorite view,
+your voice became my comfort,
+and your love became my safest place.
 
 <br><br>
 
 Thank you for choosing me,
-for holding my hand,
-and for loving me the way you do.
+supporting me,
+and making every ordinary day feel extraordinary.
 
-I promise to stand beside you,
-support your dreams,
-and love you in every chapter of our lives.
+I promise to hold your hand through every happiness,
+every challenge,
+and every new chapter of our beautiful life.
 
 <br><br>
 
 Every sunrise with you is a blessing,
 every sunset with you is a memory,
-and every tomorrow with you is my dream.
+and every tomorrow with you is a dream I cannot wait to live.
 
 <br><br>
 
 Forever yours,
-<br>
+
+<br><br>
 
 ❤️ Your future wife, Devyani ❤️
 
@@ -368,18 +881,20 @@ Forever yours,
 
 
 <button onclick="nextPage()">
-One Last Surprise 🎁
+I Have One More Question 💍
 </button>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- 💍 Page 5 - Proposal -->
 
-<div class="page" id="page5">
+<!-- 💍 PAGE 7 — Proposal -->
+
+
+<div class="page" id="page7">
 
 <div class="card">
 
@@ -387,51 +902,57 @@ One Last Surprise 🎁
 Paras, Will You Marry Me? 💍❤️
 </h1>
 
+
 <p>
+
 You are my today,
 my tomorrow,
 and my forever.
+
+<br><br>
+
+Will you make my dreams complete?
+
 </p>
 
 
 <button id="yes"
-onclick="nextPage()">
-YES ❤️
-</button>
+onclick="sayYes()">
 
+YES ❤️
+
+</button>
 
 <br>
 
 
 <button id="no">
+
 NO 😜
+
 </button>
 
-</div>
 
 </div>
 
+</div>
 
 
-<!-- 🎉 Page 6 - Forever Celebration -->
 
-<div class="page" id="page6">
+<!-- 🎆 PAGE 8 — HE SAID YES Celebration -->
+
+
+<div class="page" id="page8">
 
 <div class="card">
 
 <h1>
-🎉 HE SAID YES 🎉
+🎆 HE SAID YES ❤️💍 🎆
 </h1>
 
 
-<h2 style="
-font-size:40px;
-color:#ff0066;
-text-shadow:0 0 20px pink;
-">
-
+<h2>
 Devyani ❤️ Paras
-
 </h2>
 
 
@@ -441,11 +962,14 @@ Devyani ❤️ Paras
 
 <br><br>
 
-Our forever journey begins here,
-with love, trust,
-and a lifetime of beautiful memories.
+Our forever journey begins here.
 
-❤️💍🌹
+A lifetime filled with love,
+laughter,
+dreams,
+and countless beautiful memories awaits us.
+
+❤️🌹✨
 
 </p>
 
@@ -455,162 +979,170 @@ and a lifetime of beautiful memories.
 </div>
 <script>
 
-// ------------------ Page Navigation ------------------
+/* ---------------- START STORY ---------------- */
 
 let currentPage = 1;
 
+function startStory(){
+
+    document.getElementById("music").play();
+
+    document.getElementById("startPage")
+    .classList.remove("active");
+
+    document.getElementById("page1")
+    .classList.add("active");
+
+    typeMessage();
+
+}
+
+
+/* ---------------- PAGE NAVIGATION ---------------- */
+
 function nextPage(){
 
-    document
-    .getElementById("page"+currentPage)
-    .classList.remove("active");
+    document.getElementById(
+        "page"+currentPage
+    ).classList.remove("active");
+
 
     currentPage++;
 
-    document
-    .getElementById("page"+currentPage)
-    .classList.add("active");
 
+    document.getElementById(
+        "page"+currentPage
+    ).classList.add("active");
 
-    // Start music after first click
-    if(currentPage === 2){
-        document
-        .getElementById("music")
-        .play();
-    }
 }
 
 
-// ------------------ Typing Effect ------------------
+/* ---------------- TYPING EFFECT ---------------- */
 
-let text =
+let message =
 "Paras, I have something special to tell you... ❤️";
 
-let index = 0;
+let letter = 0;
 
-function type(){
 
-    if(index < text.length){
+function typeMessage(){
 
-        document
-        .getElementById("typing")
-        .innerHTML += text.charAt(index);
+    if(letter < message.length){
 
-        index++;
+        document.getElementById("typing")
+        .innerHTML += message.charAt(letter);
 
-        setTimeout(type, 100);
+        letter++;
+
+        setTimeout(typeMessage,100);
     }
 
 }
 
-type();
 
-
-// ------------------ Floating Hearts ------------------
+/* ---------------- FLOATING HEARTS ---------------- */
 
 function createHeart(){
 
-    let heart = document.createElement("div");
+let heart = document.createElement("div");
 
-    heart.className = "heart";
+heart.className = "heart";
 
-    heart.innerHTML = "❤️";
+heart.innerHTML = "❤️";
 
-    heart.style.left =
-    Math.random()*100 + "vw";
-
-    document.body.appendChild(heart);
+heart.style.left =
+Math.random()*100 + "vw";
 
 
-    setTimeout(()=>{
-        heart.remove();
-    },8000);
+document.body.appendChild(heart);
+
+
+setTimeout(()=>{
+heart.remove();
+},8000);
 
 }
 
 setInterval(createHeart, 400);
 
 
-// ------------------ Twinkling Stars ------------------
+/* ---------------- TWINKLING STARS ---------------- */
 
 function createStar(){
 
-    let star = document.createElement("div");
+let star=document.createElement("div");
 
-    star.className = "star";
+star.className="star";
 
-    star.innerHTML = "✨";
+star.innerHTML="✨";
 
-    star.style.left =
-    Math.random()*100 + "vw";
+star.style.left=Math.random()*100+"vw";
 
-    star.style.top =
-    Math.random()*100 + "vh";
+star.style.top=Math.random()*100+"vh";
 
 
-    document.body.appendChild(star);
+document.body.appendChild(star);
 
 
-    setTimeout(()=>{
-        star.remove();
-    },3000);
+setTimeout(()=>{
+star.remove();
+},3000);
 
 }
 
-setInterval(createStar, 600);
+setInterval(createStar,600);
 
 
-// ------------------ Falling Roses ------------------
+/* ---------------- FALLING ROSES ---------------- */
 
 function createRose(){
 
-    let rose = document.createElement("div");
+let rose=document.createElement("div");
 
-    rose.className = "rose";
+rose.className="rose";
 
-    rose.innerHTML = "🌹";
+rose.innerHTML="🌹";
 
-    rose.style.left =
-    Math.random()*100 + "vw";
-
-
-    document.body.appendChild(rose);
+rose.style.left=Math.random()*100+"vw";
 
 
-    setTimeout(()=>{
-        rose.remove();
-    },8000);
+document.body.appendChild(rose);
+
+
+setTimeout(()=>{
+rose.remove();
+},8000);
 
 }
 
-setInterval(createRose, 700);
+setInterval(createRose,700);
 
 
-// ------------------ Photo Carousel ------------------
+/* ---------------- PHOTO CAROUSEL ---------------- */
 
 let photos = [
-    "photo1.jpg",
-    "photo2.jpg",
-    "photo3.jpg",
-    "photo4.jpg",
-    "photo5.jpg",
-    "photo6.jpg"
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg",
+"photo5.jpg",
+"photo6.jpg"
 ];
 
 
 let captions = [
 
-"The sunset was beautiful, but nothing compares to the light you brought into my life ❤️🌅",
+"The sunset was beautiful, but nothing compares to your love ❤️🌅",
 
-"Our little moments, my biggest treasures ❤️",
+"Our little moments are my biggest treasures ❤️",
 
-"Every picture tells a story of us 💖",
+"Every picture tells a story of us 💕",
 
-"Smiles, laughter and endless memories ✨",
+"Smiles, laughter and countless memories ✨",
 
-"My favourite place will always be beside you ❤️",
+"With you, every moment feels magical 🌹",
 
-"Forever starts with you, Paras 💍"
+"My forever begins and ends with you 💍"
 
 ];
 
@@ -618,50 +1150,77 @@ let captions = [
 let photoIndex = 0;
 
 
+function updatePhoto(){
+
+document.getElementById("photo").src =
+photos[photoIndex];
+
+
+document.getElementById("caption").innerHTML =
+captions[photoIndex];
+
+}
+
+
 function nextPhoto(){
 
-    photoIndex++;
+photoIndex++;
 
-    if(photoIndex >= photos.length){
-        photoIndex = 0;
-    }
+if(photoIndex >= photos.length){
 
-    updatePhoto();
+photoIndex = 0;
+
+}
+
+updatePhoto();
+
 }
 
 
 function previousPhoto(){
 
-    photoIndex--;
-
-    if(photoIndex < 0){
-        photoIndex = photos.length - 1;
-    }
-
-    updatePhoto();
-}
+photoIndex--;
 
 
-function updatePhoto(){
+if(photoIndex < 0){
 
-    document
-    .getElementById("photo")
-    .src = photos[photoIndex];
-
-
-    document
-    .getElementById("caption")
-    .innerHTML = captions[photoIndex];
+photoIndex = photos.length-1;
 
 }
 
 
-// Auto slide every 3 seconds
+updatePhoto();
 
-setInterval(nextPhoto, 3000);
+}
 
 
-// ------------------ Wedding Countdown ------------------
+setInterval(nextPhoto,3000);
+
+
+/* ---------------- LOVE NOTES ---------------- */
+
+let notes = [
+
+"I love your smile ❤️",
+
+"You are my safest place 🏡",
+
+"My forever begins with you 💍",
+
+"Every day with you is a blessing ✨"
+
+];
+
+
+function showNote(number){
+
+document.getElementById("noteMessage")
+.innerHTML = notes[number-1];
+
+}
+
+
+/* ---------------- WEDDING COUNTDOWN ---------------- */
 
 let weddingDate =
 new Date("December 12, 2026 00:00:00");
@@ -669,73 +1228,147 @@ new Date("December 12, 2026 00:00:00");
 
 setInterval(function(){
 
-    let now = new Date();
+let now = new Date();
 
-    let distance =
-    weddingDate - now;
-
-
-    let days =
-    Math.floor(distance / (1000*60*60*24));
+let distance = weddingDate - now;
 
 
-    let hours =
-    Math.floor(
-    (distance %
-    (1000*60*60*24))
-    /
-    (1000*60*60)
-    );
+let days =
+Math.floor(distance / (1000*60*60*24));
 
 
-    let minutes =
-    Math.floor(
-    (distance %
-    (1000*60*60))
-    /
-    (1000*60)
-    );
+let hours =
+Math.floor(
+(distance % (1000*60*60*24))
+/
+(1000*60*60)
+);
 
 
-    let seconds =
-    Math.floor(
-    (distance %
-    (1000*60))
-    /
-    1000
-    );
+let minutes =
+Math.floor(
+(distance % (1000*60*60))
+/
+(1000*60)
+);
 
 
-    document
-    .getElementById("countdown")
-    .innerHTML =
+let seconds =
+Math.floor(
+(distance % (1000*60))
+/
+1000
+);
 
-    days + " Days ❤️<br>" +
-    hours + " Hours ❤️<br>" +
-    minutes + " Minutes ❤️<br>" +
-    seconds + " Seconds ❤️";
+
+document.getElementById("countdown")
+.innerHTML =
+
+days + " Days ❤️<br>" +
+
+hours + " Hours ❤️<br>" +
+
+minutes + " Minutes ❤️<br>" +
+
+seconds + " Seconds ❤️";
+
 
 },1000);
 
 
-// ------------------ Funny Moving NO Button ------------------
+/* ---------------- FUNNY NO BUTTON ---------------- */
 
-let no =
+let noButton =
 document.getElementById("no");
 
 
-no.addEventListener("mouseover", function(){
+noButton.addEventListener(
+"mouseover",
 
-    no.style.position = "absolute";
+function(){
 
-    no.style.left =
-    Math.random()*70 + "vw";
+noButton.style.position =
+"absolute";
 
-    no.style.top =
-    Math.random()*70 + "vh";
 
-});
+noButton.style.left =
+Math.random()*70 + "vw";
 
+
+noButton.style.top =
+Math.random()*70 + "vh";
+
+}
+
+);
+
+
+/* ---------------- YES CELEBRATION ---------------- */
+
+function sayYes(){
+
+
+document.getElementById("page7")
+.classList.remove("active");
+
+
+document.getElementById("page8")
+.classList.add("active");
+
+
+
+for(let i=0;i<80;i++){
+
+
+setTimeout(function(){
+
+
+let firework =
+document.createElement("div");
+
+
+firework.innerHTML =
+
+["🎆","✨","❤️","🌹"]
+[Math.floor(Math.random()*4)];
+
+
+firework.style.position =
+"fixed";
+
+
+firework.style.left =
+Math.random()*100 + "vw";
+
+
+firework.style.top =
+Math.random()*100 + "vh";
+
+
+firework.style.fontSize =
+"35px";
+
+
+firework.style.zIndex = "999";
+
+
+document.body.appendChild(firework);
+
+
+
+setTimeout(()=>{
+
+firework.remove();
+
+},1500);
+
+
+}, i*70);
+
+}
+
+
+}
 
 </script>
 
