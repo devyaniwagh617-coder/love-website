@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Devyani ❤️ Paras | Forever Love</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Paras ❤️ Devyani</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -11,101 +17,230 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Georgia, serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:black;
-color:white;
+font-family:'Poppins',sans-serif;
+background:#fff5f7;
+color:#2b2b2b;
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
-.bg-video{
-position:fixed;
-inset:0;
-width:100%;
-height:100%;
-object-fit:cover;
-z-index:-3;
-filter:brightness(0.35);
-}
-
-.overlay{
-position:fixed;
-inset:0;
-background:radial-gradient(circle, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
-z-index:-2;
-}
-
-/* PAGE SYSTEM */
-.page{
-position:fixed;
-inset:0;
-display:none;
-justify-content:center;
-align-items:center;
-padding:20px;
-}
-
-.page.active{
+.hero{
+height:100vh;
 display:flex;
-}
-
-/* CARD */
-.card{
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,0.15);
-padding:25px;
-border-radius:25px;
+align-items:center;
+justify-content:center;
 text-align:center;
-max-width:850px;
-width:92%;
-max-height:92dvh;
-overflow-y:auto;
-box-shadow:0 0 40px rgba(255,0,120,0.25);
+padding:20px;
+background:
+linear-gradient(
+135deg,
+#fff5f7,
+#ffe7ef
+);
 }
 
-/* TEXT */
-h1{font-size:36px;margin-bottom:10px;}
-p{font-size:16px;line-height:1.7;}
-
-/* BUTTON */
-button{
-margin-top:15px;
-padding:12px 28px;
-border:none;
-border-radius:50px;
-cursor:pointer;
-background:linear-gradient(45deg,#ff2e7a,#ff7aa2);
-color:white;
-transition:0.3s;
-}
-button:hover{transform:scale(1.05);}
-
-/* NOTES */
-.note-box{
-text-align:left;
-padding:12px;
-margin-bottom:10px;
-border-left:3px solid #ff4d88;
-background:rgba(255,255,255,0.05);
-border-radius:10px;
+.hero-content{
+max-width:700px;
 }
 
-/* LETTER */
-.letter{
-text-align:left;
-font-size:15px;
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+color:#ff4d88;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:1.2rem;
 line-height:1.8;
 }
 
-/* COUNTDOWN */
-#countdown{
-font-size:22px;
-margin-top:10px;
-font-weight:bold;
+.btn{
+margin-top:35px;
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:#ff4d88;
+color:white;
+font-size:1rem;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.photo-section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+.card{
+max-width:900px;
+text-align:center;
+}
+
+.card img{
+width:100%;
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.card h2{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+margin-top:30px;
+line-height:1.6;
+}
+
+.letter{
+padding:100px 10%;
+max-width:900px;
+margin:auto;
+line-height:2;
+font-size:1.1rem;
+}
+
+.letter h2{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+text-align:center;
+color:#ff4d88;
+margin-bottom:40px;
+}
+
+.proposal{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.proposal-box{
+max-width:800px;
+}
+
+.proposal h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+color:#ff4d88;
+margin-bottom:30px;
+}
+
+.proposal p{
+font-size:1.2rem;
+line-height:2;
+}
+
+.buttons{
+margin-top:40px;
+}
+
+.yes{
+background:#ff4d88;
+color:white;
+border:none;
+padding:15px 35px;
+border-radius:50px;
+font-size:1rem;
+cursor:pointer;
+margin:10px;
+}
+
+.no{
+background:#ddd;
+border:none;
+padding:15px 35px;
+border-radius:50px;
+font-size:1rem;
+cursor:pointer;
+position:relative;
+margin:10px;
+}
+
+.celebration{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+}
+
+.celebration h1{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+color:#ff4d88;
+}
+
+.celebration p{
+font-size:1.4rem;
+margin-top:20px;
+}
+
+.hearts{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+}
+
+.heart{
+position:absolute;
+font-size:24px;
+animation:float 8s linear forwards;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+z-index:999;
+padding:10px 20px;
+border:none;
+border-radius:30px;
+background:#ff4d88;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.7rem;
+}
+
+.card h2{
+font-size:1.5rem;
+}
+
+.proposal h1{
+font-size:2.5rem;
+}
+
 }
 
 </style>
@@ -113,181 +248,317 @@ font-weight:bold;
 
 <body>
 
-<video autoplay muted loop class="bg-video">
-<source src="bg.mp4" type="video/mp4">
-</video>
+<div class="hearts" id="hearts"></div>
 
-<div class="overlay"></div>
+<button class="music-btn" id="musicBtn">
+🔊 Play Music
+</button>
 
-<audio id="music" loop>
+<audio id="bgMusic" loop>
 <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- PAGE 0 -->
-<div class="page active" id="page0">
-<div class="card">
-<h1>Devyani ❤️ Paras</h1>
-<p>A cinematic love story 💍</p>
-<button onclick="startStory()">Enter Story 🎬</button>
-</div>
-</div>
+<section class="hero">
 
-<!-- PAGE 1 -->
-<div class="page" id="page1">
-<div class="card">
-<h1 id="typing"></h1>
-<p>Every moment feels like destiny ✨</p>
-<button onclick="nextPage()">Next</button>
-</div>
-</div>
+<div class="hero-content">
 
-<!-- PAGE 2 -->
-<div class="page" id="page2">
-<div class="card">
-<h1>Memories 🎞️</h1>
-<p>Our journey together 💕</p>
-<button onclick="nextPage()">Love Notes 💌</button>
-</div>
-</div>
+<h1>Paras ❤️ Devyani</h1>
 
-<!-- PAGE 3 -->
-<div class="page" id="page3">
-<div class="card">
-<h1>Love Notes 💌</h1>
-
-<div class="note-box">You are my favorite feeling ❤️</div>
-<div class="note-box">Thinking of you makes everything better ✨</div>
-<div class="note-box">You became my forever 💍</div>
-<div class="note-box">You feel like home 🏡</div>
-<div class="note-box">I choose you every time ♾️</div>
-<div class="note-box">It was always you ❤️</div>
-
-<button onclick="nextPage()">Journey 📖</button>
-</div>
-</div>
-
-<!-- PAGE 4 -->
-<div class="page" id="page4">
-<div class="card">
-<h1>Our Journey 💍</h1>
-<p>Met → Loved → Engaged → Forever ♾️</p>
-<button onclick="nextPage()">Countdown ⏳</button>
-</div>
-</div>
-
-<!-- PAGE 5 -->
-<div class="page" id="page5">
-<div class="card">
-<h1>Countdown 💍</h1>
-<div id="countdown"></div>
-<button onclick="nextPage()">Love Letter 💌</button>
-</div>
-</div>
-
-<!-- PAGE 6 -->
-<div class="page" id="page6">
-<div class="card">
-<h1>Love Letter 💌</h1>
-
-<div class="letter">
-My dearest Paras,<br><br>
-You are my peace, my happiness, my forever.<br><br>
-It’s you. Only you. Always you. ❤️<br><br>
-<strong>Devyani</strong>
-</div>
-
-<button onclick="nextPage()">Final Question 💍</button>
-</div>
-</div>
-
-<!-- PAGE 7 -->
-<div class="page" id="page7">
-<div class="card">
-<h1>Will You Marry Me? 💍</h1>
-<button onclick="sayYes()">YES ❤️</button>
-<button id="noBtn">NO 😜</button>
-</div>
-</div>
-
-<!-- PAGE 8 -->
-<div class="page" id="page8">
-<div class="card">
-
-<h1>🎆 HE SAID YES 🎆</h1>
-
-<p style="text-align:left;line-height:1.8;margin-top:10px;">
-Forever didn’t just begin… it became real today. 💍✨<br><br>
-
-From now on, every sunrise feels softer, every night feels safer, and every heartbeat carries one name — <b>US</b>.<br><br>
-
-We are not just two people in love… we are a story written by destiny itself. ❤️<br><br>
-
-This is not the end… this is the beginning of forever. 💫
+<p>
+This isn't just a website.
+<br><br>
+It's a small piece of my heart.
+<br><br>
+— Devyani
 </p>
 
+<button class="btn"
+onclick="document.getElementById('photo1').scrollIntoView();">
+Begin Our Story
+</button>
+
 </div>
+
+</section>
+
+<section class="photo-section" id="photo1">
+
+<div class="card">
+
+<img src="photo1.jpg">
+
+<h2>
+I never knew that one person
+could make ordinary days feel so special.
+</h2>
+
 </div>
+
+</section>
+
+<section class="photo-section">
+
+<div class="card">
+
+<img src="photo2.jpg">
+
+<h2>
+What started as conversations
+slowly became my favorite part of every day.
+</h2>
+
+</div>
+
+</section>
+
+<section class="photo-section">
+
+<div class="card">
+
+<img src="photo3.jpg">
+
+<h2>
+Your smile became my comfort.
+Your presence became my peace.
+</h2>
+
+</div>
+
+</section>
+
+<section class="photo-section">
+
+<div class="card">
+
+<img src="photo4.jpg">
+
+<h2>
+Some of my happiest memories
+have one thing in common.
+<br><br>
+You.
+</h2>
+
+</div>
+
+</section>
+
+<section class="photo-section">
+
+<div class="card">
+
+<img src="photo5.jpg">
+
+<h2>
+And somewhere along the way,
+you became the person
+I couldn't imagine my life without.
+</h2>
+
+</div>
+
+</section>
+
+<section class="photo-section">
+
+<div class="card">
+
+<img src="photo6.jpg">
+
+<h2>
+Every road in my heart
+leads to you.
+</h2>
+
+</div>
+
+</section>
+
+<section class="letter">
+
+<h2>Dear Paras ❤️</h2>
+
+<p>
+
+There are so many things I could say,
+yet somehow words never feel enough.
+
+<br><br>
+
+You have brought so much happiness,
+warmth, and love into my life.
+
+<br><br>
+
+Every memory we've created together
+has become a treasure that I hold close
+to my heart.
+
+<br><br>
+
+With you, I have found comfort during difficult days,
+laughter during ordinary days,
+and joy in the smallest moments.
+
+<br><br>
+
+You make me feel understood,
+valued, and loved in ways I never thought possible.
+
+<br><br>
+
+When I think about the future,
+every dream I have includes you.
+
+<br><br>
+
+Every place I want to go.
+Every memory I want to make.
+Every chapter I want to write.
+
+<br><br>
+
+I want them all to be with you.
+
+<br><br>
+
+Love always,
+
+<br><br>
+
+❤️ Devyani
+
+</p>
+
+</section>
+
+<section class="proposal" id="proposal">
+
+<div class="proposal-box">
+
+<h1>Will You Marry Me?</h1>
+
+<p>
+
+Paras,
+
+<br><br>
+
+You are my favorite person,
+my greatest blessing,
+and the love of my life.
+
+<br><br>
+
+I don't just want more memories with you.
+
+<br><br>
+
+I want forever with you.
+
+<br><br>
+
+❤️ Devyani
+
+</p>
+
+<div class="buttons">
+
+<button class="yes" onclick="showCelebration()">
+YES ❤️
+</button>
+
+<button class="no" id="noBtn">
+NO 😅
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="celebration" id="celebration">
+
+<h1>❤️ HE SAID YES ❤️</h1>
+
+<p>
+
+Paras & Devyani
+
+<br><br>
+
+Forever Starts Now
+
+</p>
+
+</section>
 
 <script>
 
-let page=0;
+const noBtn=document.getElementById("noBtn");
 
-/* PAGE SYSTEM */
-function show(n){
-document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-document.getElementById("page"+n).classList.add("active");
-page=n;
-}
+noBtn.addEventListener("mouseover",()=>{
 
-function startStory(){
-document.getElementById("music").play().catch(()=>{});
-show(1);
-typeText();
-}
+const x=Math.random()*300-150;
+const y=Math.random()*300-150;
 
-function nextPage(){
-show(page+1);
-}
+noBtn.style.transform=`translate(${x}px,${y}px)`;
 
-/* TYPE EFFECT */
-let msg="Paras, you are my forever ❤️";
-let i=0;
-
-function typeText(){
-if(i<msg.length){
-document.getElementById("typing").innerHTML += msg[i++];
-setTimeout(typeText,70);
-}
-}
-
-/* ONLY DAYS COUNTDOWN */
-let wedding=new Date("December 12, 2026 00:00:00");
-
-setInterval(()=>{
-let now=new Date();
-let d=wedding-now;
-
-let days=Math.floor(d/86400000);
-
-let el=document.getElementById("countdown");
-if(el){
-el.innerHTML = days + " Days ❤️";
-}
-},1000);
-
-/* NO BUTTON MOVE */
-let no=document.getElementById("noBtn");
-
-no?.addEventListener("mouseover",()=>{
-no.style.position="absolute";
-no.style.left=Math.random()*70+"vw";
-no.style.top=Math.random()*70+"vh";
 });
 
-/* YES */
-function sayYes(){
-show(8);
+function showCelebration(){
+
+document.getElementById("proposal").style.display="none";
+
+document.getElementById("celebration").style.display="flex";
+
 }
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+document.getElementById("hearts")
+.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},10000);
+
+}
+
+setInterval(createHeart,500);
+
+const music=document.getElementById("bgMusic");
+const musicBtn=document.getElementById("musicBtn");
+
+musicBtn.addEventListener("click",()=>{
+
+if(music.paused){
+
+music.play();
+
+musicBtn.innerHTML="🔇 Pause Music";
+
+}else{
+
+music.pause();
+
+musicBtn.innerHTML="🔊 Play Music";
+
+}
+
+});
 
 </script>
 
