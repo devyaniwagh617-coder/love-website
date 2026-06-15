@@ -7,6 +7,7 @@
 
 <style>
 
+/* ---------- RESET ---------- */
 *{
 margin:0;
 padding:0;
@@ -20,25 +21,29 @@ color:white;
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* ---------- BACKGROUND ---------- */
 .bg-video{
 position:fixed;
-inset:0;
+top:0;
+left:0;
 width:100%;
 height:100%;
 object-fit:cover;
 z-index:-3;
-filter:brightness(0.35);
+filter:brightness(0.35) contrast(1.2);
 }
 
 .overlay{
 position:fixed;
-inset:0;
-background:radial-gradient(circle, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:radial-gradient(circle, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
 z-index:-2;
 }
 
-/* PAGES */
+/* ---------- PAGE SYSTEM ---------- */
 .page{
 position:fixed;
 inset:0;
@@ -52,7 +57,7 @@ padding:20px;
 display:flex;
 }
 
-/* CARD */
+/* ---------- CARD ---------- */
 .card{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(18px);
@@ -67,27 +72,29 @@ overflow-y:auto;
 box-shadow:0 0 40px rgba(255,0,120,0.25);
 }
 
+/* ---------- TEXT ---------- */
 h1{
-font-size:36px;
-margin-bottom:10px;
+font-size:42px;
+margin-bottom:15px;
 }
 
 p{
-font-size:16px;
-line-height:1.7;
+font-size:18px;
+line-height:1.8;
 opacity:0.9;
 }
 
-/* BUTTON */
+/* ---------- BUTTON ---------- */
 button{
-margin-top:15px;
-padding:12px 28px;
+margin-top:20px;
+padding:14px 35px;
 border:none;
 border-radius:50px;
 cursor:pointer;
-font-size:15px;
+font-size:16px;
 color:white;
 background:linear-gradient(45deg,#ff2e7a,#ff7aa2);
+box-shadow:0 0 25px rgba(255,50,120,0.5);
 transition:0.3s;
 }
 
@@ -95,30 +102,70 @@ button:hover{
 transform:scale(1.05);
 }
 
-/* NOTES */
-.note-box{
-text-align:left;
-padding:12px;
-margin-bottom:10px;
-border-left:3px solid #ff4d88;
-background:rgba(255,255,255,0.05);
-border-radius:10px;
+/* ---------- CAROUSEL ---------- */
+.carousel{
+position:relative;
+width:100%;
+max-width:340px;
+margin:20px auto;
+border-radius:20px;
+overflow:hidden;
 }
 
-/* COUNTDOWN */
-#countdown{
-font-size:18px;
-margin-top:10px;
-line-height:1.8;
+.carousel img{
+width:100%;
+height:420px;
+object-fit:cover;
+display:block;
+border-radius:20px;
 }
 
-/* LETTER */
+/* arrows */
+.arrow{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+width:40px;
+height:40px;
+border-radius:50%;
+border:none;
+background:white;
+cursor:pointer;
+opacity:0.8;
+}
+
+.left{left:10px;}
+.right{right:10px;}
+
+/* ---------- LETTER FIX ---------- */
 .letter{
 text-align:left;
-font-size:15px;
-line-height:1.8;
+font-size:16px;
+line-height:1.9;
 max-height:55dvh;
 overflow-y:auto;
+padding-right:10px;
+}
+
+/* ---------- MOBILE ---------- */
+@media(max-width:600px){
+
+h1{font-size:30px;}
+p{font-size:15px;}
+
+.card{
+padding:18px;
+max-height:94dvh;
+}
+
+.carousel img{
+height:300px;
+}
+
+.letter{
+font-size:14px;
+max-height:50dvh;
+}
 }
 
 </style>
@@ -136,11 +183,11 @@ overflow-y:auto;
 <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- PAGE 0 -->
-<div class="page active" id="page0">
+<!-- START -->
+<div class="page active" id="startPage">
 <div class="card">
 <h1>Devyani ❤️ Paras</h1>
-<p>A cinematic love story 💍</p>
+<p>A favorite love story 💍</p>
 <button onclick="startStory()">Enter Story 🎬</button>
 </div>
 </div>
@@ -149,8 +196,8 @@ overflow-y:auto;
 <div class="page" id="page1">
 <div class="card">
 <h1 id="typing"></h1>
-<p>Every moment feels like destiny ✨</p>
-<button onclick="nextPage()">Next</button>
+<p>Every moment feels like a movie 🎥</p>
+<button onclick="nextPage()">Next 📸</button>
 </div>
 </div>
 
@@ -158,7 +205,14 @@ overflow-y:auto;
 <div class="page" id="page2">
 <div class="card">
 <h1>Memories 🎞️</h1>
-<p>Our journey together 💕</p>
+
+<div class="carousel">
+<button class="arrow left" onclick="prevPhoto()">❮</button>
+<img id="photo" src="photo1.jpg">
+<button class="arrow right" onclick="nextPhoto()">❯</button>
+</div>
+
+<p id="caption"></p>
 <button onclick="nextPage()">Love Notes 💌</button>
 </div>
 </div>
@@ -168,12 +222,11 @@ overflow-y:auto;
 <div class="card">
 <h1>Love Notes 💌</h1>
 
-<div class="note-box">You are my favorite feeling ❤️</div>
-<div class="note-box">Thinking of you makes everything better ✨</div>
-<div class="note-box">You became my forever 💍</div>
-<div class="note-box">You feel like home 🏡</div>
-<div class="note-box">I choose you every time ♾️</div>
-<div class="note-box">It was always you ❤️</div>
+<button onclick="showNote(1)">Note 1</button>
+<button onclick="showNote(2)">Note 2</button>
+<button onclick="showNote(3)">Note 3</button>
+
+<p id="note" style="margin-top:20px;"></p>
 
 <button onclick="nextPage()">Journey 📖</button>
 </div>
@@ -200,13 +253,15 @@ overflow-y:auto;
 <!-- PAGE 6 -->
 <div class="page" id="page6">
 <div class="card">
-<h1>Love Letter 💌</h1>
+<h1>A Letter From My Heart 💌</h1>
 
 <div class="letter">
 My dearest Paras,<br><br>
-You are my peace, my happiness, my forever.<br><br>
+From the moment you came into my life, everything started to feel softer, brighter, and more meaningful.<br><br>
+You became my peace, my thought, my happiness.<br><br>
+I choose you in every lifetime I imagine.<br><br>
 It’s you. Only you. Always you. ❤️<br><br>
-<strong>Devyani</strong>
+<strong>Devyani 💍✨</strong>
 </div>
 
 <button onclick="nextPage()">Final Question 💍</button>
@@ -217,6 +272,7 @@ It’s you. Only you. Always you. ❤️<br><br>
 <div class="page" id="page7">
 <div class="card">
 <h1>Will You Marry Me? 💍</h1>
+
 <button onclick="sayYes()">YES ❤️</button>
 <button id="noBtn">NO 😜</button>
 </div>
@@ -225,89 +281,36 @@ It’s you. Only you. Always you. ❤️<br><br>
 <!-- PAGE 8 -->
 <div class="page" id="page8">
 <div class="card">
-
 <h1>🎆 HE SAID YES 🎆</h1>
-
-<p style="text-align:left;line-height:1.8;margin-top:10px;">
-Forever didn’t just begin… it became real today. 💍✨<br><br>
-
-From now on, every sunrise feels softer, every night feels safer, and every heartbeat carries one name — <b>US</b>.<br><br>
-
-We are not just two people in love… we are a story written by destiny itself. ❤️<br><br>
-
-No matter what life brings, I choose you in every version of my life.<br><br>
-
-If I ever live again, I will still find you and still love you. ♾️<br><br>
-
-This is not the end… this is the beginning of forever. 💫
-</p>
-
+<p>Forever begins now 💍✨</p>
 </div>
 </div>
 
 <script>
 
-/* FIXED PAGE SYSTEM */
 let page = 0;
 
-function show(n){
-document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-document.getElementById("page"+n).classList.add("active");
-page = n;
-}
-
 function startStory(){
+page = 1;
 document.getElementById("music").play().catch(()=>{});
-show(1);
+document.getElementById("startPage").classList.remove("active");
+document.getElementById("page1").classList.add("active");
 typeText();
 }
 
 function nextPage(){
-show(page+1);
+document.querySelector(".page.active").classList.remove("active");
+page++;
+let next=document.getElementById("page"+page);
+if(next) next.classList.add("active");
 }
 
 /* typing */
-let msg="Paras, you are my forever ❤️";
+let msg="Paras, you are my love forever ❤️";
 let i=0;
 
 function typeText(){
 if(i<msg.length){
-document.getElementById("typing").innerHTML += msg[i++];
-setTimeout(typeText,70);
+document.getElementById("typing").innerHTML+=msg[i++];
+setTimeout(typeText,80);
 }
-}
-
-/* countdown */
-let wedding = new Date("December 12, 2026 00:00:00");
-
-setInterval(()=>{
-let now = new Date();
-let d = wedding - now;
-
-let days = Math.floor(d/86400000);
-let hrs = Math.floor((d%86400000)/3600000);
-let min = Math.floor((d%3600000)/60000);
-let sec = Math.floor((d%60000)/1000);
-
-document.getElementById("countdown").innerHTML =
-`${days} Days ❤️<br>${hrs}h ${min}m ${sec}s`;
-},1000);
-
-/* NO button move */
-let no = document.getElementById("noBtn");
-
-no.addEventListener("mouseover",()=>{
-no.style.position="absolute";
-no.style.left=Math.random()*70+"vw";
-no.style.top=Math.random()*70+"vh";
-});
-
-/* YES */
-function sayYes(){
-show(8);
-}
-
-</script>
-
-</body>
-</html>
