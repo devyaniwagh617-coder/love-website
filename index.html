@@ -5,7 +5,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Devyani ❤️ Paras | Forever Cinematic</title>
+<title>Devyani ❤️ Paras | Forever Love</title>
 
 <style>
 
@@ -66,22 +66,27 @@ transform:scale(1);
 pointer-events:auto;
 }
 
-/* ---------- CARD ---------- */
+/* ---------- CARD (FIXED FOR MOBILE + LAPTOP) ---------- */
 .card{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(18px);
 border:1px solid rgba(255,255,255,0.15);
-padding:35px;
+padding:25px;
 border-radius:25px;
 text-align:center;
 max-width:850px;
 width:90%;
+
+/* ✅ IMPORTANT FIX */
+max-height:90vh;
+overflow-y:auto;
+
 box-shadow:0 0 40px rgba(255,0,120,0.25);
 }
 
 /* ---------- TEXT ---------- */
 h1{
-font-size:44px;
+font-size:42px;
 margin-bottom:20px;
 }
 
@@ -109,10 +114,11 @@ button:hover{
 transform:scale(1.05);
 }
 
-/* ---------- CAROUSEL ---------- */
+/* ---------- CAROUSEL (FIXED RESPONSIVE) ---------- */
 .carousel{
 position:relative;
-width:320px;
+width:100%;
+max-width:320px;
 margin:20px auto;
 border-radius:20px;
 overflow:hidden;
@@ -120,11 +126,13 @@ overflow:hidden;
 
 .carousel img{
 width:100%;
+height:auto;
 aspect-ratio:3/4;
 object-fit:cover;
 display:block;
 }
 
+/* arrows */
 .arrow{
 position:absolute;
 top:50%;
@@ -141,7 +149,19 @@ opacity:0.8;
 .left{left:10px;}
 .right{right:10px;}
 
-/* ---------- HEARTS ---------- */
+/* ---------- LOVE LETTER (FIXED SCROLL ISSUE) ---------- */
+.letter{
+line-height:1.9;
+font-size:16px;
+text-align:left;
+
+max-height:55vh;
+overflow-y:auto;
+
+padding-right:10px;
+}
+
+/* ---------- HEART ---------- */
 .heart{
 position:fixed;
 font-size:18px;
@@ -153,11 +173,22 @@ from{transform:translateY(110vh);}
 to{transform:translateY(-10vh);}
 }
 
-/* ---------- LETTER ---------- */
+/* ---------- MOBILE FIX ---------- */
+@media(max-width:600px){
+
+h1{font-size:30px;}
+p{font-size:15px;}
+
+.card{
+padding:18px;
+max-height:88vh;
+}
+
 .letter{
-line-height:2;
-font-size:17px;
-text-align:left;
+font-size:14px;
+max-height:50vh;
+}
+
 }
 
 </style>
@@ -165,7 +196,7 @@ text-align:left;
 
 <body>
 
-<!-- BACKGROUND -->
+<!-- BACKGROUND VIDEO -->
 <video autoplay muted loop class="bg-video">
 <source src="bg.mp4" type="video/mp4">
 </video>
@@ -181,7 +212,7 @@ text-align:left;
 <div class="page active" id="startPage">
 <div class="card">
 <h1>Devyani ❤️ Paras</h1>
-<p>A cinematic love story 💍</p>
+<p>A favorite love story 💍</p>
 <button onclick="startStory()">Enter Story 🎬</button>
 </div>
 </div>
@@ -249,7 +280,7 @@ text-align:left;
 </div>
 </div>
 
-<!-- PAGE 6 💌 LETTER FIXED -->
+<!-- PAGE 6 💌 FIXED LETTER -->
 <div class="page" id="page6">
 <div class="card">
 
@@ -290,7 +321,6 @@ Forever yours,<br>
 
 <button onclick="sayYes()">YES ❤️</button>
 <button id="noBtn">NO 😜</button>
-
 </div>
 </div>
 
@@ -304,7 +334,7 @@ Forever yours,<br>
 
 <script>
 
-/* ---------- PAGE SYSTEM FIX ---------- */
+/* ---------- PAGE SYSTEM ---------- */
 let page = 0;
 
 function startStory(){
@@ -318,12 +348,12 @@ typeText();
 function nextPage(){
 document.querySelector(".page.active").classList.remove("active");
 page++;
-let next = document.getElementById("page"+page);
+let next=document.getElementById("page"+page);
 if(next) next.classList.add("active");
 }
 
 /* ---------- TYPE ---------- */
-let msg="Paras, you are my cinematic forever ❤️";
+let msg="Paras, you are my love forever ❤️";
 let i=0;
 
 function typeText(){
