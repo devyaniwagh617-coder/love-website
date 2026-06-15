@@ -3,9 +3,9 @@
 
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Devyani ❤️ Paras | Cinematic Forever</title>
+<title>Devyani ❤️ Paras | Forever Cinematic</title>
 
 <style>
 
@@ -14,16 +14,16 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:"Georgia",serif;
+font-family:Georgia, serif;
 }
 
 body{
 overflow:hidden;
-color:white;
 background:black;
+color:white;
 }
 
-/* ---------- BACKGROUND VIDEO ---------- */
+/* ---------- BACKGROUND ---------- */
 .bg-video{
 position:fixed;
 top:0;
@@ -66,7 +66,7 @@ transform:scale(1);
 pointer-events:auto;
 }
 
-/* ---------- GLASS CARD ---------- */
+/* ---------- CARD ---------- */
 .card{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(18px);
@@ -81,14 +81,13 @@ box-shadow:0 0 40px rgba(255,0,120,0.25);
 
 /* ---------- TEXT ---------- */
 h1{
-font-size:46px;
+font-size:44px;
 margin-bottom:20px;
-text-shadow:0 0 20px rgba(255,80,150,0.6);
 }
 
 p{
 font-size:18px;
-line-height:1.9;
+line-height:1.8;
 opacity:0.9;
 }
 
@@ -117,7 +116,6 @@ width:320px;
 margin:20px auto;
 border-radius:20px;
 overflow:hidden;
-box-shadow:0 0 30px rgba(255,0,120,0.3);
 }
 
 .carousel img{
@@ -148,7 +146,6 @@ opacity:0.8;
 position:fixed;
 font-size:18px;
 animation:float 8s linear infinite;
-opacity:0.8;
 }
 
 @keyframes float{
@@ -156,21 +153,11 @@ from{transform:translateY(110vh);}
 to{transform:translateY(-10vh);}
 }
 
-/* ---------- FADE ---------- */
-.fadeText{
-animation:fadeIn 2s ease;
-}
-
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(20px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-/* ---------- MOBILE ---------- */
-@media(max-width:600px){
-h1{font-size:30px;}
-p{font-size:15px;}
-.card{padding:22px;}
+/* ---------- LETTER ---------- */
+.letter{
+line-height:2;
+font-size:17px;
+text-align:left;
 }
 
 </style>
@@ -178,14 +165,14 @@ p{font-size:15px;}
 
 <body>
 
-<!-- 🎬 BACKGROUND -->
+<!-- BACKGROUND -->
 <video autoplay muted loop class="bg-video">
 <source src="bg.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
-<!-- 🎵 MUSIC -->
+<!-- MUSIC -->
 <audio id="music" loop>
 <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -193,9 +180,9 @@ p{font-size:15px;}
 <!-- START -->
 <div class="page active" id="startPage">
 <div class="card">
-<h1 class="fadeText">Devyani ❤️ Paras</h1>
-<p>A cinematic love story written in destiny 💍</p>
-<button onclick="startStory()">Enter Our Story 🎬</button>
+<h1>Devyani ❤️ Paras</h1>
+<p>A cinematic love story 💍</p>
+<button onclick="startStory()">Enter Story 🎬</button>
 </div>
 </div>
 
@@ -203,8 +190,8 @@ p{font-size:15px;}
 <div class="page" id="page1">
 <div class="card">
 <h1 id="typing"></h1>
-<p>Every moment with you feels like a movie scene 🎥</p>
-<button onclick="nextPage()">Begin Memories 📸</button>
+<p>Every moment feels like a movie 🎥</p>
+<button onclick="nextPage()">Next 📸</button>
 </div>
 </div>
 
@@ -212,7 +199,7 @@ p{font-size:15px;}
 <div class="page" id="page2">
 <div class="card">
 
-<h1>Our Memories 🎞️</h1>
+<h1>Memories 🎞️</h1>
 
 <div class="carousel">
 <button class="arrow left" onclick="prevPhoto()">❮</button>
@@ -258,38 +245,38 @@ p{font-size:15px;}
 <div class="card">
 <h1>Countdown 💍</h1>
 <div id="countdown"></div>
-<button onclick="nextPage()">Proposal ❤️</button>
+<button onclick="nextPage()">Love Letter 💌</button>
 </div>
 </div>
 
-<!-- PAGE 6 💌 UPDATED LOVE LETTER -->
+<!-- PAGE 6 💌 LETTER FIXED -->
 <div class="page" id="page6">
 <div class="card">
 
 <h1>A Letter From My Heart 💌</h1>
 
-<p>
+<div class="letter">
+
 My dearest Paras,<br><br>
 
-From the moment you came into my life, everything around me started to feel softer, brighter, and more meaningful. It feels like my world quietly changed in a way I can never fully explain, only feel.<br><br>
+From the moment you came into my life, everything started to feel softer, brighter, and more meaningful.<br><br>
 
-There are people who come and go in life, but then there are those rare souls who stay in your heart even when they are not around you — and for me, you are that person. You didn’t just become a part of my life… you became a part of my thoughts, my smiles, and my silence too.<br><br>
+You didn’t just enter my life… you became part of my thoughts, my peace, and my happiness.<br><br>
 
-I find peace in your presence, even when we are not speaking. I find happiness in your name, even when I hear it in my mind. And I find comfort in the thought that somewhere, somehow, you are also thinking of me.<br><br>
+I feel you even in silence. I find you even in distance. And I choose you even in every tomorrow I imagine.<br><br>
 
-I don’t know what the future holds, but I know what my heart chooses today. It chooses you — in every version of tomorrow I imagine. Through every up and down, through every dream and challenge, I want to stand beside you, not as someone temporary, but as someone permanent.<br><br>
+I don’t know what the future holds, but I know one thing clearly — my heart always chooses you.<br><br>
 
-If love is a journey, then I don’t want shortcuts. I want every step, every memory, every moment — even the imperfect ones — because they all lead to you.<br><br>
+You are my safe place, my calm, my favorite feeling, and my forever thought.<br><br>
 
-You are not just my love… you are my safe place, my calm in chaos, my favorite thought, and my most beautiful feeling.<br><br>
-
-And if life ever asks me again what I truly want, my answer will always be simple:<br><br>
+And if life asks me what I want, my answer will always be simple:<br><br>
 
 It’s you. Only you. Always you. ❤️<br><br>
 
 Forever yours,<br>
 <strong>Devyani 💍✨</strong>
-</p>
+
+</div>
 
 <button onclick="nextPage()">Final Question 💍</button>
 
@@ -303,6 +290,7 @@ Forever yours,<br>
 
 <button onclick="sayYes()">YES ❤️</button>
 <button id="noBtn">NO 😜</button>
+
 </div>
 </div>
 
@@ -310,27 +298,27 @@ Forever yours,<br>
 <div class="page" id="page8">
 <div class="card">
 <h1>🎆 HE SAID YES 🎆</h1>
-<p>Our cinematic forever begins now 💍✨</p>
+<p>Forever begins now 💍✨</p>
 </div>
 </div>
 
 <script>
 
-/* ---------- START ---------- */
-let page=1;
+/* ---------- PAGE SYSTEM FIX ---------- */
+let page = 0;
 
 function startStory(){
+page = 1;
 document.getElementById("music").play().catch(()=>{});
 document.getElementById("startPage").classList.remove("active");
 document.getElementById("page1").classList.add("active");
 typeText();
 }
 
-/* ---------- NAV ---------- */
 function nextPage(){
 document.querySelector(".page.active").classList.remove("active");
 page++;
-let next=document.getElementById("page"+page);
+let next = document.getElementById("page"+page);
 if(next) next.classList.add("active");
 }
 
@@ -348,7 +336,7 @@ setTimeout(typeText,80);
 
 /* ---------- CAROUSEL ---------- */
 let photos=["photo1.jpg","photo2.jpg","photo3.jpg"];
-let captions=["First Scene ❤️","Love Frame 💕","Forever Shot 💍"];
+let captions=["First ❤️","Memories 💕","Forever 💍"];
 let index=0;
 
 function update(){
@@ -366,10 +354,10 @@ index=(index-1+photos.length)%photos.length;
 update();
 }
 
-setInterval(nextPhoto,3500);
+setInterval(nextPhoto,3000);
 
 /* ---------- NOTES ---------- */
-let notes=["You are my light 🎥","My safest scene ❤️","Forever written in stars ✨"];
+let notes=["I love you ❤️","You are my home 🏡","Forever mine 💍"];
 
 function showNote(n){
 document.getElementById("note").innerHTML=notes[n-1];
@@ -381,7 +369,8 @@ let wedding=new Date("December 12, 2026 00:00:00");
 setInterval(()=>{
 let now=new Date();
 let d=wedding-now;
-document.getElementById("countdown").innerHTML=Math.floor(d/86400000)+" days left ❤️";
+document.getElementById("countdown").innerHTML=
+Math.floor(d/86400000)+" days left ❤️";
 },1000);
 
 /* ---------- NO BUTTON ---------- */
@@ -398,17 +387,16 @@ function sayYes(){
 document.querySelector(".page.active").classList.remove("active");
 document.getElementById("page8").classList.add("active");
 
-for(let i=0;i<70;i++){
+for(let i=0;i<60;i++){
 setTimeout(()=>{
 let e=document.createElement("div");
 e.innerHTML=["🎆","✨","❤️","🌹"][Math.floor(Math.random()*4)];
 e.style.position="fixed";
 e.style.left=Math.random()*100+"vw";
 e.style.top=Math.random()*100+"vh";
-e.style.fontSize="30px";
 document.body.appendChild(e);
 setTimeout(()=>e.remove(),1500);
-},i*60);
+},i*70);
 }
 }
 
