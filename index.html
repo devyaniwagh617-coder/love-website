@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>Devyani ❤️ Paras | Forever Love</title>
 
 <style>
@@ -18,9 +16,9 @@ font-family:Georgia, serif;
 }
 
 body{
-overflow:hidden;
 background:black;
 color:white;
+overflow-x:hidden;
 }
 
 /* ---------- BACKGROUND ---------- */
@@ -45,28 +43,21 @@ background:radial-gradient(circle, rgba(0,0,0,0.2), rgba(0,0,0,0.85));
 z-index:-2;
 }
 
-/* ---------- PAGE SYSTEM ---------- */
+/* ---------- PAGE ---------- */
 .page{
-position:absolute;
-width:100%;
-height:100vh;
-display:flex;
+position:fixed;
+inset:0;
+display:none;
 justify-content:center;
 align-items:center;
-opacity:0;
-transform:scale(1.05);
-transition:1s ease;
-pointer-events:none;
 padding:20px;
 }
 
 .page.active{
-opacity:1;
-transform:scale(1);
-pointer-events:auto;
+display:flex;
 }
 
-/* ---------- CARD (FIXED FOR MOBILE + LAPTOP) ---------- */
+/* ---------- CARD ---------- */
 .card{
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(18px);
@@ -75,35 +66,31 @@ padding:25px;
 border-radius:25px;
 text-align:center;
 max-width:850px;
-width:90%;
-
-/* ✅ IMPORTANT FIX */
-max-height:90vh;
+width:92%;
+max-height:92dvh;
 overflow-y:auto;
-
 box-shadow:0 0 40px rgba(255,0,120,0.25);
 }
 
-/* ---------- TEXT ---------- */
 h1{
-font-size:42px;
-margin-bottom:20px;
+font-size:40px;
+margin-bottom:15px;
 }
 
 p{
 font-size:18px;
-line-height:1.8;
+line-height:1.7;
 opacity:0.9;
 }
 
 /* ---------- BUTTON ---------- */
 button{
-margin-top:25px;
-padding:14px 35px;
+margin-top:15px;
+padding:12px 30px;
 border:none;
 border-radius:50px;
 cursor:pointer;
-font-size:18px;
+font-size:16px;
 color:white;
 background:linear-gradient(45deg,#ff2e7a,#ff7aa2);
 box-shadow:0 0 25px rgba(255,50,120,0.5);
@@ -114,11 +101,10 @@ button:hover{
 transform:scale(1.05);
 }
 
-/* ---------- CAROUSEL (FIXED RESPONSIVE) ---------- */
+/* ---------- CAROUSEL ---------- */
 .carousel{
 position:relative;
-width:100%;
-max-width:320px;
+max-width:340px;
 margin:20px auto;
 border-radius:20px;
 overflow:hidden;
@@ -126,69 +112,38 @@ overflow:hidden;
 
 .carousel img{
 width:100%;
-height:auto;
-aspect-ratio:3/4;
+height:400px;
 object-fit:cover;
-display:block;
+border-radius:20px;
 }
 
-/* arrows */
-.arrow{
-position:absolute;
-top:50%;
-transform:translateY(-50%);
-width:40px;
-height:40px;
-border-radius:50%;
-border:none;
-background:white;
-cursor:pointer;
-opacity:0.8;
-}
-
-.left{left:10px;}
-.right{right:10px;}
-
-/* ---------- LOVE LETTER (FIXED SCROLL ISSUE) ---------- */
+/* ---------- LETTER ---------- */
 .letter{
-line-height:1.9;
-font-size:16px;
 text-align:left;
-
-max-height:55vh;
+font-size:15px;
+line-height:1.8;
+max-height:55dvh;
 overflow-y:auto;
-
-padding-right:10px;
 }
 
-/* ---------- HEART ---------- */
-.heart{
-position:fixed;
-font-size:18px;
-animation:float 8s linear infinite;
+/* ---------- LOVE NOTES STYLE ---------- */
+.notes{
+text-align:left;
+font-size:15px;
+line-height:1.8;
 }
 
-@keyframes float{
-from{transform:translateY(110vh);}
-to{transform:translateY(-10vh);}
+.note-box{
+margin-bottom:18px;
+padding:12px;
+border-left:3px solid #ff4d88;
+background:rgba(255,255,255,0.05);
+border-radius:10px;
 }
 
-/* ---------- MOBILE FIX ---------- */
 @media(max-width:600px){
-
-h1{font-size:30px;}
-p{font-size:15px;}
-
-.card{
-padding:18px;
-max-height:88vh;
-}
-
-.letter{
-font-size:14px;
-max-height:50vh;
-}
-
+h1{font-size:28px;}
+p{font-size:14px;}
 }
 
 </style>
@@ -196,14 +151,12 @@ max-height:50vh;
 
 <body>
 
-<!-- BACKGROUND VIDEO -->
 <video autoplay muted loop class="bg-video">
 <source src="bg.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
 
-<!-- MUSIC -->
 <audio id="music" loop>
 <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -212,7 +165,7 @@ max-height:50vh;
 <div class="page active" id="startPage">
 <div class="card">
 <h1>Devyani ❤️ Paras</h1>
-<p>A favorite love story 💍</p>
+<p>A cinematic love story 💍</p>
 <button onclick="startStory()">Enter Story 🎬</button>
 </div>
 </div>
@@ -221,44 +174,55 @@ max-height:50vh;
 <div class="page" id="page1">
 <div class="card">
 <h1 id="typing"></h1>
-<p>Every moment feels like a movie 🎥</p>
-<button onclick="nextPage()">Next 📸</button>
+<p>Every moment feels like destiny ✨</p>
+<button onclick="nextPage()">Next</button>
 </div>
 </div>
 
 <!-- PAGE 2 -->
 <div class="page" id="page2">
 <div class="card">
-
 <h1>Memories 🎞️</h1>
 
 <div class="carousel">
-<button class="arrow left" onclick="prevPhoto()">❮</button>
 <img id="photo" src="photo1.jpg">
-<button class="arrow right" onclick="nextPhoto()">❯</button>
 </div>
 
 <p id="caption"></p>
-
 <button onclick="nextPage()">Love Notes 💌</button>
-
 </div>
 </div>
 
-<!-- PAGE 3 -->
+<!-- PAGE 3 (UPDATED LOVE NOTES) -->
 <div class="page" id="page3">
 <div class="card">
-
 <h1>Love Notes 💌</h1>
 
-<button onclick="showNote(1)">Note 1</button>
-<button onclick="showNote(2)">Note 2</button>
-<button onclick="showNote(3)">Note 3</button>
+<div class="notes">
 
-<p id="note" style="margin-top:20px;"></p>
+<div class="note-box">💌 You are not just my love… you are my favorite feeling in this world. ❤️</div>
+
+<div class="note-box">💌 No matter how my day goes, thinking of you makes everything better. ✨</div>
+
+<div class="note-box">💌 You became my forever without even trying. 💍</div>
+
+<div class="note-box">💌 I don’t need perfect moments, I just need you in them. ❤️‍🩹</div>
+
+<div class="note-box">💌 You feel like home, even when everything is far away. 🏡</div>
+
+<div class="note-box">💌 Loving you is my most natural habit now. ❤️</div>
+
+<div class="note-box">💌 If I had to choose again, I’d still choose you. ♾️</div>
+
+<div class="note-box">💌 You are my calm in chaos, my smile in silence. 🌙</div>
+
+<div class="note-box">💌 Distance can never change what my heart decided. 💫</div>
+
+<div class="note-box">💌 It was never “just love”… it was always you. ❤️💍</div>
+
+</div>
 
 <button onclick="nextPage()">Journey 📖</button>
-
 </div>
 </div>
 
@@ -280,37 +244,20 @@ max-height:50vh;
 </div>
 </div>
 
-<!-- PAGE 6 💌 FIXED LETTER -->
+<!-- PAGE 6 -->
 <div class="page" id="page6">
 <div class="card">
-
-<h1>A Letter From My Heart 💌</h1>
+<h1>A Letter 💌</h1>
 
 <div class="letter">
-
 My dearest Paras,<br><br>
-
-From the moment you came into my life, everything started to feel softer, brighter, and more meaningful.<br><br>
-
-You didn’t just enter my life… you became part of my thoughts, my peace, and my happiness.<br><br>
-
-I feel you even in silence. I find you even in distance. And I choose you even in every tomorrow I imagine.<br><br>
-
-I don’t know what the future holds, but I know one thing clearly — my heart always chooses you.<br><br>
-
-You are my safe place, my calm, my favorite feeling, and my forever thought.<br><br>
-
-And if life asks me what I want, my answer will always be simple:<br><br>
-
+You are my peace, my thought, my happiness.<br><br>
+You became my forever without asking permission.<br><br>
 It’s you. Only you. Always you. ❤️<br><br>
-
-Forever yours,<br>
-<strong>Devyani 💍✨</strong>
-
+<strong>Devyani</strong>
 </div>
 
 <button onclick="nextPage()">Final Question 💍</button>
-
 </div>
 </div>
 
@@ -318,7 +265,6 @@ Forever yours,<br>
 <div class="page" id="page7">
 <div class="card">
 <h1>Will You Marry Me? 💍</h1>
-
 <button onclick="sayYes()">YES ❤️</button>
 <button id="noBtn">NO 😜</button>
 </div>
@@ -334,11 +280,10 @@ Forever yours,<br>
 
 <script>
 
-/* ---------- PAGE SYSTEM ---------- */
-let page = 0;
+let page=0;
 
 function startStory(){
-page = 1;
+page=1;
 document.getElementById("music").play().catch(()=>{});
 document.getElementById("startPage").classList.remove("active");
 document.getElementById("page1").classList.add("active");
@@ -352,82 +297,39 @@ let next=document.getElementById("page"+page);
 if(next) next.classList.add("active");
 }
 
-/* ---------- TYPE ---------- */
-let msg="Paras, you are my love forever ❤️";
+/* typing */
+let msg="Paras, you are my forever ❤️";
 let i=0;
 
 function typeText(){
 if(i<msg.length){
-document.getElementById("typing").innerHTML+=msg[i];
-i++;
-setTimeout(typeText,80);
+document.getElementById("typing").innerHTML+=msg[i++];
+setTimeout(typeText,70);
 }
 }
 
-/* ---------- CAROUSEL ---------- */
-let photos=["photo1.jpg","photo2.jpg","photo3.jpg"];
-let captions=["First ❤️","Memories 💕","Forever 💍"];
-let index=0;
-
-function update(){
-document.getElementById("photo").src=photos[index];
-document.getElementById("caption").innerHTML=captions[index];
-}
-
-function nextPhoto(){
-index=(index+1)%photos.length;
-update();
-}
-
-function prevPhoto(){
-index=(index-1+photos.length)%photos.length;
-update();
-}
-
-setInterval(nextPhoto,3000);
-
-/* ---------- NOTES ---------- */
-let notes=["I love you ❤️","You are my home 🏡","Forever mine 💍"];
-
-function showNote(n){
-document.getElementById("note").innerHTML=notes[n-1];
-}
-
-/* ---------- COUNTDOWN ---------- */
+/* countdown */
 let wedding=new Date("December 12, 2026 00:00:00");
 
 setInterval(()=>{
-let now=new Date();
-let d=wedding-now;
+let d=wedding-new Date();
 document.getElementById("countdown").innerHTML=
 Math.floor(d/86400000)+" days left ❤️";
 },1000);
 
-/* ---------- NO BUTTON ---------- */
+/* NO button */
 let no=document.getElementById("noBtn");
 
-no.addEventListener("mouseover",()=>{
+no?.addEventListener("mouseover",()=>{
 no.style.position="absolute";
 no.style.left=Math.random()*70+"vw";
 no.style.top=Math.random()*70+"vh";
 });
 
-/* ---------- YES ---------- */
+/* YES */
 function sayYes(){
 document.querySelector(".page.active").classList.remove("active");
 document.getElementById("page8").classList.add("active");
-
-for(let i=0;i<60;i++){
-setTimeout(()=>{
-let e=document.createElement("div");
-e.innerHTML=["🎆","✨","❤️","🌹"][Math.floor(Math.random()*4)];
-e.style.position="fixed";
-e.style.left=Math.random()*100+"vw";
-e.style.top=Math.random()*100+"vh";
-document.body.appendChild(e);
-setTimeout(()=>e.remove(),1500);
-},i*70);
-}
 }
 
 </script>
