@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Paras ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Arial', sans-serif;
+}
+
+body{
+    height:100vh;
+    background:linear-gradient(135deg,#ffe4ec,#fff6f8);
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    color:#ff3b6b;
+    font-size:38px;
+    min-height:80px;
+}
+
+button{
+    margin-top:30px;
+    background:#ff4f81;
+    color:white;
+    border:none;
+    padding:15px 40px;
+    border-radius:40px;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 0 20px pink;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.heart{
+    position:absolute;
+    color:#ff4f81;
+    font-size:20px;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-10vh);
+        opacity:0;
+    }
+}
+
+#message{
+    display:none;
+    font-size:30px;
+    color:#d60050;
+    animation:fade 2s;
+}
+
+@keyframes fade{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+<h1 id="typing"></h1>
+
+<button onclick="showLove()">
+Next ❤️
+</button>
+
+<h2 id="message">
+You are my forever, Paras 💍❤️
+</h2>
+
+</div>
+
+
+<script>
+
+// Typing Effect
+let text = "Paras, will you be mine... ❤️";
+let i = 0;
+
+function type(){
+    if(i < text.length){
+        document.getElementById("typing")
+        .innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type,100);
+    }
+}
+
+type();
+
+
+// Surprise Message
+function showLove(){
+    document.getElementById("message")
+    .style.display="block";
+}
+
+
+// Floating Hearts
+function createHeart(){
+
+let heart=document.createElement("div");
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=
+Math.random()*30+15+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+
+</html>
