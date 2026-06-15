@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>Paras ❤️ Devyani</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,104 +14,183 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+}
+
+html{
 scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#fff5f7;
-color:#2b2b2b;
+background:#000;
+color:#fff;
+font-family:Montserrat,sans-serif;
 overflow-x:hidden;
 }
+
+/* LOADER */
+
+.loader{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:loaderFade 4s forwards;
+}
+
+.loader h1{
+font-family:Cinzel,serif;
+font-size:4rem;
+color:#e50914;
+letter-spacing:5px;
+}
+
+@keyframes loaderFade{
+0%,75%{opacity:1;}
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* HERO */
 
 .hero{
 height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
 padding:20px;
 background:
 linear-gradient(
-135deg,
-#fff5f7,
-#ffe7ef
-);
-}
-
-.hero-content{
-max-width:700px;
+180deg,
+rgba(0,0,0,.8),
+rgba(0,0,0,.95)
+),
+url("photo1.jpg");
+background-size:cover;
+background-position:center;
 }
 
 .hero h1{
-font-family:'Playfair Display',serif;
-font-size:4rem;
-color:#ff4d88;
+font-family:Cinzel,serif;
+font-size:5rem;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:1.2rem;
-line-height:1.8;
+font-size:1.4rem;
+margin-bottom:30px;
 }
 
 .btn{
-margin-top:35px;
 padding:15px 35px;
 border:none;
-border-radius:50px;
-background:#ff4d88;
+background:#e50914;
 color:white;
 font-size:1rem;
 cursor:pointer;
-transition:.3s;
+border-radius:5px;
 }
 
-.btn:hover{
-transform:translateY(-3px);
+/* EPISODES */
+
+.section-title{
+padding:50px;
+font-size:2rem;
+font-weight:600;
 }
 
-.photo-section{
-min-height:100vh;
+.scene{
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.scene img{
+width:100%;
+height:100%;
+object-fit:cover;
+animation:zoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes zoom{
+from{
+transform:scale(1.15);
+}
+to{
+transform:scale(1);
+}
+}
+
+.scene .overlay{
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.45);
 display:flex;
 justify-content:center;
 align-items:center;
-padding:40px 20px;
-}
-
-.card{
-max-width:900px;
 text-align:center;
+padding:20px;
 }
 
-.card img{
-width:100%;
-border-radius:25px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
+.scene h2{
+font-family:Cinzel,serif;
+font-size:3rem;
+margin-bottom:20px;
 }
 
-.card h2{
-font-family:'Playfair Display',serif;
-font-size:2rem;
-margin-top:30px;
-line-height:1.6;
+.scene p{
+font-size:1.4rem;
+max-width:800px;
+line-height:1.8;
 }
+
+/* LETTER */
 
 .letter{
-padding:100px 10%;
-max-width:900px;
-margin:auto;
-line-height:2;
-font-size:1.1rem;
+padding:120px 10%;
+background:#050505;
 }
 
 .letter h2{
-font-family:'Playfair Display',serif;
+font-family:Cinzel,serif;
 font-size:3rem;
-text-align:center;
-color:#ff4d88;
 margin-bottom:40px;
+color:#e50914;
 }
+
+.letter p{
+font-size:1.2rem;
+line-height:2;
+max-width:900px;
+}
+
+/* FUTURE */
+
+.future{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.future h1{
+font-family:Cinzel,serif;
+font-size:5rem;
+color:#d4af37;
+}
+
+.future p{
+font-size:1.5rem;
+margin-top:20px;
+}
+
+/* PROPOSAL */
 
 .proposal{
 height:100vh;
@@ -130,14 +206,13 @@ max-width:800px;
 }
 
 .proposal h1{
-font-family:'Playfair Display',serif;
+font-family:Cinzel,serif;
 font-size:4rem;
-color:#ff4d88;
 margin-bottom:30px;
 }
 
 .proposal p{
-font-size:1.2rem;
+font-size:1.3rem;
 line-height:2;
 }
 
@@ -145,27 +220,28 @@ line-height:2;
 margin-top:40px;
 }
 
-.yes{
-background:#ff4d88;
-color:white;
-border:none;
+.yes,
+.no{
 padding:15px 35px;
-border-radius:50px;
+border:none;
 font-size:1rem;
 cursor:pointer;
 margin:10px;
+border-radius:5px;
+}
+
+.yes{
+background:#e50914;
+color:white;
 }
 
 .no{
-background:#ddd;
-border:none;
-padding:15px 35px;
-border-radius:50px;
-font-size:1rem;
-cursor:pointer;
+background:white;
+color:black;
 position:relative;
-margin:10px;
 }
+
+/* CELEBRATION */
 
 .celebration{
 display:none;
@@ -174,55 +250,48 @@ justify-content:center;
 align-items:center;
 flex-direction:column;
 text-align:center;
+background:black;
 }
 
 .celebration h1{
-font-family:'Playfair Display',serif;
+font-family:Cinzel,serif;
 font-size:4rem;
-color:#ff4d88;
+color:#d4af37;
 }
 
 .celebration p{
-font-size:1.4rem;
+font-size:1.5rem;
 margin-top:20px;
 }
 
-.hearts{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
+/* CREDITS */
+
+.credits{
+padding:120px 20px;
+text-align:center;
 }
 
-.heart{
-position:absolute;
-font-size:24px;
-animation:float 8s linear forwards;
+.credits h3{
+color:#e50914;
+margin-top:40px;
+font-size:2rem;
 }
 
-@keyframes float{
-from{
-transform:translateY(100vh);
-opacity:1;
-}
-to{
-transform:translateY(-100vh);
-opacity:0;
-}
+.credits p{
+line-height:2;
+font-size:1.2rem;
 }
 
-.music-btn{
+/* MUSIC */
+
+.music{
 position:fixed;
 top:20px;
 right:20px;
-z-index:999;
+z-index:10000;
 padding:10px 20px;
+background:#e50914;
 border:none;
-border-radius:30px;
-background:#ff4d88;
 color:white;
 cursor:pointer;
 }
@@ -230,15 +299,19 @@ cursor:pointer;
 @media(max-width:768px){
 
 .hero h1{
-font-size:2.7rem;
+font-size:3rem;
 }
 
-.card h2{
-font-size:1.5rem;
+.scene h2{
+font-size:2rem;
 }
 
 .proposal h1{
 font-size:2.5rem;
+}
+
+.future h1{
+font-size:3rem;
 }
 
 }
@@ -248,130 +321,97 @@ font-size:2.5rem;
 
 <body>
 
-<div class="hearts" id="hearts"></div>
+<div class="loader">
+<h1>DEVYANI ORIGINAL</h1>
+</div>
 
-<button class="music-btn" id="musicBtn">
-🔊 Play Music
+<button class="music" id="musicBtn">
+🔊 Music
 </button>
 
-<audio id="bgMusic" loop>
+<audio id="music" loop>
 <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <section class="hero">
 
-<div class="hero-content">
+<div>
 
 <h1>Paras ❤️ Devyani</h1>
 
-<p>
-This isn't just a website.
-<br><br>
-It's a small piece of my heart.
-<br><br>
-— Devyani
-</p>
+<p>A Story I Never Want To End</p>
 
 <button class="btn"
-onclick="document.getElementById('photo1').scrollIntoView();">
-Begin Our Story
+onclick="document.getElementById('scene1').scrollIntoView()">
+▶ Play Story
 </button>
 
 </div>
 
 </section>
 
-<section class="photo-section" id="photo1">
+<div class="section-title">
+Featured Episodes
+</div>
 
-<div class="card">
-
+<section class="scene" id="scene1">
 <img src="photo1.jpg">
-
-<h2>
-I never knew that one person
-could make ordinary days feel so special.
-</h2>
-
+<div class="overlay">
+<div>
+<h2>The Beginning</h2>
+<p>I never knew one person could make ordinary days feel extraordinary.</p>
 </div>
-
+</div>
 </section>
 
-<section class="photo-section">
-
-<div class="card">
-
+<section class="scene">
 <img src="photo2.jpg">
-
-<h2>
-What started as conversations
-slowly became my favorite part of every day.
-</h2>
-
+<div class="overlay">
+<div>
+<h2>Your Smile</h2>
+<p>Your smile became my comfort and my peace.</p>
 </div>
-
+</div>
 </section>
 
-<section class="photo-section">
-
-<div class="card">
-
+<section class="scene">
 <img src="photo3.jpg">
-
-<h2>
-Your smile became my comfort.
-Your presence became my peace.
-</h2>
-
+<div class="overlay">
+<div>
+<h2>Favorite Person</h2>
+<p>What started as conversations became the best part of every day.</p>
 </div>
-
+</div>
 </section>
 
-<section class="photo-section">
-
-<div class="card">
-
+<section class="scene">
 <img src="photo4.jpg">
-
-<h2>
-Some of my happiest memories
-have one thing in common.
-<br><br>
-You.
-</h2>
-
+<div class="overlay">
+<div>
+<h2>Beautiful Memories</h2>
+<p>Some of my happiest memories have one thing in common: You.</p>
 </div>
-
+</div>
 </section>
 
-<section class="photo-section">
-
-<div class="card">
-
+<section class="scene">
 <img src="photo5.jpg">
-
-<h2>
-And somewhere along the way,
-you became the person
-I couldn't imagine my life without.
-</h2>
-
+<div class="overlay">
+<div>
+<h2>My Future</h2>
+<p>Every dream I have somehow leads back to you.</p>
 </div>
-
+</div>
 </section>
 
-<section class="photo-section">
-
-<div class="card">
-
+<section class="scene">
 <img src="photo6.jpg">
-
-<h2>
-Every road in my heart
-leads to you.
-</h2>
-
+<div class="overlay">
+<div>
+<h2>Forever</h2>
+<p>Every road in my heart leads to you.</p>
 </div>
-
+</div>
 </section>
 
 <section class="letter">
@@ -380,40 +420,30 @@ leads to you.
 
 <p>
 
-There are so many things I could say,
-yet somehow words never feel enough.
+There are so many things I could say, yet somehow words never feel enough.
 
 <br><br>
 
-You have brought so much happiness,
-warmth, and love into my life.
+You have brought happiness, warmth and love into my life in ways I never imagined.
 
 <br><br>
 
-Every memory we've created together
-has become a treasure that I hold close
-to my heart.
+Every memory we've created together has become a treasure that I hold close to my heart.
 
 <br><br>
 
-With you, I have found comfort during difficult days,
-laughter during ordinary days,
-and joy in the smallest moments.
+You make me feel understood, valued and loved.
 
 <br><br>
 
-You make me feel understood,
-valued, and loved in ways I never thought possible.
-
-<br><br>
-
-When I think about the future,
-every dream I have includes you.
+When I think about the future, every dream I have includes you.
 
 <br><br>
 
 Every place I want to go.
+
 Every memory I want to make.
+
 Every chapter I want to write.
 
 <br><br>
@@ -422,13 +452,25 @@ I want them all to be with you.
 
 <br><br>
 
-Love always,
+Love Always,
 
 <br><br>
 
 ❤️ Devyani
 
 </p>
+
+</section>
+
+<section class="future">
+
+<div>
+
+<h1>COMING SOON</h1>
+
+<p>The Next Chapter...</p>
+
+</div>
 
 </section>
 
@@ -450,11 +492,11 @@ and the love of my life.
 
 <br><br>
 
-I don't just want more memories with you.
+I don't just want more memories.
 
 <br><br>
 
-I want forever with you.
+I want forever.
 
 <br><br>
 
@@ -494,71 +536,63 @@ Forever Starts Now
 
 </section>
 
+<section class="credits">
+
+<h3>Lead Cast</h3>
+<p>Paras<br>Devyani</p>
+
+<h3>Written By</h3>
+<p>Fate</p>
+
+<h3>Directed By</h3>
+<p>Love</p>
+
+<h3>The End</h3>
+<p>Or Just The Beginning ❤️</p>
+
+</section>
+
 <script>
 
-const noBtn=document.getElementById("noBtn");
+const music=document.getElementById('music');
+const musicBtn=document.getElementById('musicBtn');
 
-noBtn.addEventListener("mouseover",()=>{
+musicBtn.onclick=()=>{
+
+if(music.paused){
+music.play();
+musicBtn.innerHTML='🔇 Pause';
+}else{
+music.pause();
+musicBtn.innerHTML='🔊 Music';
+}
+
+};
+
+const noBtn=document.getElementById('noBtn');
+
+noBtn.addEventListener('mouseover',()=>{
 
 const x=Math.random()*300-150;
 const y=Math.random()*300-150;
 
-noBtn.style.transform=`translate(${x}px,${y}px)`;
+noBtn.style.transform=
+`translate(${x}px,${y}px)`;
 
 });
 
 function showCelebration(){
 
-document.getElementById("proposal").style.display="none";
+document.getElementById('proposal').style.display='none';
 
-document.getElementById("celebration").style.display="flex";
+document.getElementById('celebration').style.display='flex';
 
-}
-
-function createHeart(){
-
-const heart=document.createElement("div");
-
-heart.classList.add("heart");
-
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"%";
-
-heart.style.animationDuration=
-(5+Math.random()*5)+"s";
-
-document.getElementById("hearts")
-.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},10000);
-
-}
-
-setInterval(createHeart,500);
-
-const music=document.getElementById("bgMusic");
-const musicBtn=document.getElementById("musicBtn");
-
-musicBtn.addEventListener("click",()=>{
-
-if(music.paused){
-
-music.play();
-
-musicBtn.innerHTML="🔇 Pause Music";
-
-}else{
-
-music.pause();
-
-musicBtn.innerHTML="🔊 Play Music";
-
-}
-
+window.scrollTo({
+top:document.getElementById('celebration').offsetTop,
+behavior:'smooth'
 });
+
+}
 
 </script>
 
