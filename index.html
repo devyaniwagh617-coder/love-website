@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Devyani ❤️ Paras Forever</title>
+
+<style>
+
+/* ---------- RESET ---------- */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Georgia, serif;
+}
+
+/* ---------- BODY ---------- */
+body{
+    background: linear-gradient(135deg,#fff6f8,#ffe6ee,#fffafc);
+    color:#8b004d;
+    overflow:hidden;
+    text-align:center;
+}
+
+/* ---------- PAGES ---------- */
+.page{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:25px;
+}
+
+.active{
+    display:flex;
+}
+
+/* ---------- CARD ---------- */
+.card{
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(15px);
+    width:90%;
+    max-width:850px;
+    padding:35px;
+    border-radius:35px;
+    box-shadow:0 0 35px rgba(255,80,150,.45);
+}
+
+/* ---------- TEXT ---------- */
+h1{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* ---------- BUTTON ---------- */
+button{
+    margin-top:25px;
+    background:linear-gradient(45deg,#ff4d88,#ff99bb);
+    color:white;
+    border:none;
+    padding:15px 35px;
+    font-size:18px;
+    border-radius:50px;
+    cursor:pointer;
+}
+
+/* ---------- HEART ---------- */
+.heart{
+    position:fixed;
+    font-size:22px;
+    animation:float 8s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(110vh);}
+    to{transform:translateY(-20vh);}
+}
+
+/* ---------- STAR ---------- */
+.star{
+    position:fixed;
+    font-size:14px;
+    animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.3;}
+    50%{opacity:1;}
+}
+
+/* ---------- ROSE ---------- */
+.rose{
+    position:fixed;
+    font-size:20px;
+    animation:fall 8s linear infinite;
+}
+
+@keyframes fall{
+    from{transform:translateY(-50px);}
+    to{transform:translateY(110vh);}
+}
+
+/* ---------- CAROUSEL (FIXED) ---------- */
+.carousel{
+    position:relative;
+    width:320px;
+    max-width:90%;
+    margin:20px auto;
+    overflow:hidden;           /* ✅ FIX */
+    border-radius:20px;        /* keeps image inside curved box */
+}
+
+.carousel img{
+    width:100%;
+    aspect-ratio:3/4;          /* ✅ responsive fix */
+    object-fit:cover;
+    display:block;             /* ✅ removes gaps */
+}
+
+/* arrows */
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    border:none;
+    background:white;
+    cursor:pointer;
+    z-index:10;
+}
+
+.left{left:5px;}
+.right{right:5px;}
+
+/* ---------- NOTES ---------- */
+.notes{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:20px;
+}
+
+.envelope{
+    font-size:40px;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- START -->
+<div class="page active" id="startPage">
+<div class="card">
+<h1>Devyani ❤️ Paras</h1>
+<p>A love written in destiny 💍</p>
+<button onclick="startStory()">Tap to Begin ❤️</button>
+</div>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page" id="page1">
+<div class="card">
+<h1 id="typing"></h1>
+<p>There is a piece of my heart saved just for you ❤️</p>
+<button onclick="nextPage()">Open Memories 📸</button>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+<div class="card">
+
+<h1>Our Memories ❤️</h1>
+
+<div class="carousel">
+<button class="arrow left" onclick="prevPhoto()">❮</button>
+<img id="photo" src="photo1.jpg">
+<button class="arrow right" onclick="nextPhoto()">❯</button>
+</div>
+
+<p id="caption"></p>
+
+<button onclick="nextPage()">Love Notes 💌</button>
+
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+<div class="card">
+
+<h1>Love Notes 💌</h1>
+
+<div class="notes">
+<div class="envelope" onclick="showNote(1)">💌</div>
+<div class="envelope" onclick="showNote(2)">💌</div>
+<div class="envelope" onclick="showNote(3)">💌</div>
+</div>
+
+<p id="note">Click envelope ❤️</p>
+
+<button onclick="nextPage()">Journey 📖</button>
+
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+<div class="card">
+<h1>Our Journey ❤️</h1>
+<p>❤️ Met → 💍 Engaged → 👰 Wedding → ♾ Forever</p>
+<button onclick="nextPage()">Countdown 💍</button>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+<div class="card">
+<h1>Countdown 💍</h1>
+<div id="countdown"></div>
+<button onclick="nextPage()">Proposal 💌</button>
+</div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+<div class="card">
+<h1>A Letter ❤️</h1>
+<p>My love, you are my forever 💍</p>
+<button onclick="nextPage()">Final Question 💍</button>
+</div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+<div class="card">
+
+<h1>Will You Marry Me? 💍</h1>
+
+<button onclick="sayYes()">YES ❤️</button>
+<button id="noBtn">NO 😜</button>
+
+</div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="page8">
+<div class="card">
+<h1>🎆 HE SAID YES ❤️</h1>
+<p>Forever begins now 💍✨</p>
+</div>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+let page = 1;
+
+/* START */
+function startStory(){
+document.getElementById("music").play().catch(()=>{});
+document.getElementById("startPage").classList.remove("active");
+document.getElementById("page1").classList.add("active");
+typeText();
+}
+
+/* NAV */
+function nextPage(){
+document.querySelector(".page.active").classList.remove("active");
+page++;
+let next=document.getElementById("page"+page);
+if(next) next.classList.add("active");
+}
+
+/* TYPE */
+let msg="Paras, you are my forever ❤️";
+let i=0;
+
+function typeText(){
+if(i<msg.length){
+document.getElementById("typing").innerHTML+=msg[i];
+i++;
+setTimeout(typeText,100);
+}
+}
+
+/* CAROUSEL */
+let photos=["photo1.jpg","photo2.jpg","photo3.jpg"];
+let captions=["Love ❤️","Memories 💕","Forever 💍"];
+let index=0;
+
+function update(){
+document.getElementById("photo").src=photos[index];
+document.getElementById("caption").innerHTML=captions[index];
+}
+
+function nextPhoto(){
+index=(index+1)%photos.length;
+update();
+}
+
+function prevPhoto(){
+index=(index-1+photos.length)%photos.length;
+update();
+}
+
+setInterval(nextPhoto,3000);
+
+/* NOTES */
+let notes=["I love you ❤️","You are my home 🏡","Forever mine 💍"];
+
+function showNote(n){
+document.getElementById("note").innerHTML=notes[n-1];
+}
+
+/* COUNTDOWN */
+let wedding=new Date("December 12, 2026 00:00:00");
+
+setInterval(()=>{
+let now=new Date();
+let d=wedding-now;
+document.getElementById("countdown").innerHTML=Math.floor(d/86400000)+" days ❤️";
+},1000);
+
+/* NO BUTTON */
+let no=document.getElementById("noBtn");
+
+no.addEventListener("mouseover",()=>{
+no.style.position="absolute";
+no.style.left=Math.random()*70+"vw";
+no.style.top=Math.random()*70+"vh";
+});
+
+/* YES */
+function sayYes(){
+document.querySelector(".page.active").classList.remove("active");
+document.getElementById("page8").classList.add("active");
+
+for(let i=0;i<60;i++){
+setTimeout(()=>{
+let e=document.createElement("div");
+e.innerHTML=["🎆","✨","❤️","🌹"][Math.floor(Math.random()*4)];
+e.style.position="fixed";
+e.style.left=Math.random()*100+"vw";
+e.style.top=Math.random()*100+"vh";
+document.body.appendChild(e);
+setTimeout(()=>e.remove(),1500);
+},i*80);
+}
+}
+
+</script>
+
+</body>
+</html>
